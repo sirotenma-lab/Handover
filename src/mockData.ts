@@ -1,0 +1,96 @@
+import { Patient } from './types';
+
+export const MOCK_PATIENTS: Patient[] = [
+  {
+    id: '1',
+    name: 'Tn. Ahmad Subarjo',
+    age: 54,
+    gender: 'L',
+    room: 'Melati 01',
+    bed: 'A',
+    diagnosis: 'Post Op Appendectomy',
+    lastHandover: {
+      id: 'h1',
+      patientId: '1',
+      timestamp: new Date().toISOString(),
+      nurseInCharge: 'Ns. Sarah',
+      nurseNextShift: 'Ns. Budi',
+      sbar: {
+        situation: 'Pasien mengeluh nyeri pada area operasi skala 4/10.',
+        background: 'Riwayat appendisitis akut, operasi tadi pagi jam 08.00.',
+        assessment: 'Tanda vital stabil, luka operasi kering.',
+        recommendation: 'Lanjutkan observasi nyeri dan mobilisasi bertahap.',
+        latestMedicalInstructions: 'Ketorolac 30mg/8jam IV, Cefotaxime 1gr/12jam IV.',
+        criticalResults: 'HB 12.5 (Normal), Leukosit 11.000 (Sedikit meningkat).',
+        medicalDeviceStatus: 'Infus RL lancar, Kateter terpasang.',
+      },
+      physicalExam: {
+        infusion: {
+          type: 'RL',
+          remainingVolume: '300ml',
+          dripRate: '20 tpm',
+        },
+        wounds: 'Luka operasi tertutup kasa, tidak ada rembesan.',
+        assistiveDevices: {
+          oxygen: false,
+          catheter: true,
+          catheterDetail: 'Urine output 100cc/jam, jernih.',
+          ngt: false,
+          ventilator: false,
+        },
+      },
+      todos: [
+        { id: 't1', task: 'Cek TTV jam 20.00', completed: false },
+        { id: 't2', task: 'Ganti cairan infus jam 22.00', completed: false },
+      ],
+      currentAssessment: 'Kondisi umum sedang, kesadaran CM.',
+      patientSummary: 'Pasien post op hari ke-0, nyeri terkontrol.',
+    },
+  },
+  {
+    id: '2',
+    name: 'Ny. Siti Aminah',
+    age: 62,
+    gender: 'P',
+    room: 'Mawar 04',
+    bed: 'B',
+    diagnosis: 'CHF Grade III + DM Type 2',
+    lastHandover: {
+      id: 'h2',
+      patientId: '2',
+      timestamp: new Date().toISOString(),
+      nurseInCharge: 'Ns. Sarah',
+      nurseNextShift: 'Ns. Budi',
+      sbar: {
+        situation: 'Sesak napas berkurang, posisi semi fowler.',
+        background: 'Riwayat gagal jantung kronik, masuk dengan keluhan edema tungkai.',
+        assessment: 'Ronchi berkurang, edema berkurang.',
+        recommendation: 'Batasi cairan 1000ml/24jam.',
+        latestMedicalInstructions: 'Furosemide 20mg/12jam IV, Insulin Novorapid 3x8 unit.',
+        criticalResults: 'GDS 180 mg/dl, Kalium 3.2 (Rendah).',
+        medicalDeviceStatus: 'Oksigen Nasal Kanul 3 lpm.',
+      },
+      physicalExam: {
+        infusion: {
+          type: 'NaCl 0.9%',
+          remainingVolume: '450ml',
+          dripRate: '7 tpm (micro)',
+        },
+        wounds: 'Tidak ada luka.',
+        assistiveDevices: {
+          oxygen: true,
+          oxygenDetail: 'Nasal Kanul 3 lpm',
+          catheter: false,
+          ngt: false,
+          ventilator: false,
+        },
+      },
+      todos: [
+        { id: 't3', task: 'Monitor balance cairan', completed: true },
+        { id: 't4', task: 'Cek GDS sebelum makan malam', completed: false },
+      ],
+      currentAssessment: 'Sesak minimal, edema tungkai +1.',
+      patientSummary: 'Pasien dengan CHF dan DM, perlu monitoring ketat intake-output.',
+    },
+  },
+];

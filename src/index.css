@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 font-sans antialiased;
+}
+
+.card {
+  @apply bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden;
+}
+
+.input-label {
+  @apply text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 block;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all;
+}
+
+.btn-primary {
+  @apply px-6 py-2 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 active:scale-95 transition-all disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-secondary {
+  @apply px-6 py-2 bg-white text-slate-700 border border-slate-200 font-medium rounded-xl hover:bg-slate-50 active:scale-95 transition-all;
+}
+
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  aside, header, .no-print, button, .integrasi-section {
+    display: none !important;
+  }
+
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .flex-1.flex.overflow-hidden {
+    display: block !important;
+  }
+
+  .w-full.md\:w-80 {
+    display: none !important;
+  }
+
+  .max-w-4xl {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .bg-slate-50\/50 {
+    background: transparent !important;
+  }
+
+  .bg-blue-50, .bg-amber-50, .bg-emerald-50, .bg-red-50, .bg-slate-50 {
+    background-color: white !important;
+    border: 1px solid #eee !important;
+    color: black !important;
+  }
+
+  h2, h3, h4 {
+    color: black !important;
+  }
+
+  .text-slate-400, .text-slate-500 {
+    color: #666 !important;
+  }
+
+  .print-header {
+    display: block !important;
+    text-align: center;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
+
+.print-header, .print-only {
+  display: none;
+}
+
